@@ -1,28 +1,29 @@
 # Migrations
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/migrations`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
-
-## Installation
-
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'migrations'
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install migrations
+Rake tasks for basic migration management
 
 ## Usage
 
-TODO: Write usage instructions here
+Here's an example using Postgres, but any SQL database should be fine.
+```
+require 'migrations'
+require 'pg'
+
+namespace :migrate do
+  task :connect do
+    # pretend this was loaded from a file or ENV
+    conf = { host: '192.168.33.10', user: 'postgres', dbname: 'migrations_development' }
+
+    # Using Postgres here, but any DB should be fine
+    conn = PG::Connection.new(conf)
+
+    # set up a block that allows Migrations run SQL
+    Migrations.sql_executor do |sql|
+      conn.exec(sql)
+    end
+  end
+end
+```
 
 ## Development
 
