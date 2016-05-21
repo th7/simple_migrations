@@ -1,7 +1,6 @@
 require 'fileutils'
 
 require 'simple_migrations/version'
-require 'simple_migrations/rake_tasks'
 
 module SimpleMigrations
   class << self

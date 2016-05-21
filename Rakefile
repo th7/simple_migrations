@@ -1,7 +1,7 @@
 require "bundler/gem_tasks"
 require "rspec/core/rake_task"
 
-require 'simple_migrations'
+require 'simple_migrations/rake_tasks'
 require 'pg'
 require 'yaml'
 
