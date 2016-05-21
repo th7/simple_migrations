@@ -2,15 +2,15 @@ require 'simple_migrations'
 
 desc 'Run any new migrations'
 task migrate: ['migrate:connect'] do
-  Migrations.ensure_schema_migrations
-  Migrations.migrate
+  SimpleMigrations.ensure_schema_migrations
+  SimpleMigrations.migrate
 end
 
 namespace :migrate do
   desc 'Stub a new migration file'
   task :create, [:name] do |t, args|
     name = args[:name]
-    Migrations.ensure_directories
-    Migrations.stub_migration(name)
+    SimpleMigrations.ensure_directories
+    SimpleMigrations.stub_migration(name)
   end
 end
