@@ -1,5 +1,7 @@
-require "migrations/version"
 require 'fileutils'
+
+require "migrations/version"
+require "migrations/rake_tasks"
 
 module Migrations
   class << self

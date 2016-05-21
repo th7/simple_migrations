@@ -14,8 +14,6 @@ namespace :migrate do
   end
 end
 
-require 'migrations/rake_tasks'
-
 RSpec::Core::RakeTask.new(:spec)
 
 task :default => :spec
