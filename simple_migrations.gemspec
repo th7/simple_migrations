@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'migrations/version'
+require 'simple_migrations/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "migrations"
-  spec.version       = Migrations::VERSION
+  spec.name          = "simple_migrations"
+  spec.version       = SimpleMigrations::VERSION
   spec.authors       = ["Tyler Hartland"]
   spec.email         = ["tylerhartland7@gmail.com"]
 

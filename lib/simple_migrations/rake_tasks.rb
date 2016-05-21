@@ -1,4 +1,4 @@
-require 'migrations'
+require 'simple_migrations'
 
 desc 'Run any new migrations'
 task migrate: ['migrate:connect'] do

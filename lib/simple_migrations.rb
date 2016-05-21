@@ -1,9 +1,9 @@
 require 'fileutils'
 
-require "migrations/version"
-require "migrations/rake_tasks"
+require 'simple_migrations/version'
+require 'simple_migrations/rake_tasks'
 
-module Migrations
+module SimpleMigrations
   class << self
     def sql_executor(&block)
       @sql_executor = block
