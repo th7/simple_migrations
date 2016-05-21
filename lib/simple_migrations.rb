@@ -19,7 +19,7 @@ module SimpleMigrations
 
     def stub_migration(name)
       now = Time.now
-      stamp = now.year.to_s + now.month.to_s + now.day.to_s + now.hour.to_s + now.min.to_s + now.sec.to_s
+      stamp = now.year.to_s + now.month.to_s.rjust(2, '0') + now.day.to_s.rjust(2, '0') + now.hour.to_s.rjust(2, '0') + now.min.to_s.rjust(2, '0') + now.sec.to_s.rjust(2, '0')
       FileUtils.touch("db/migrate/#{stamp}_#{name}.sql")
     end
 
