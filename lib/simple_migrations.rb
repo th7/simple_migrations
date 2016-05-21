@@ -34,6 +34,7 @@ module SimpleMigrations
           exec('begin')
           sql = File.read(filename)
           puts sql
+          exec(sql)
           exec("insert into schema_migrations(id, ran_at) values(#{id}, '#{Time.now.iso8601}')")
           exec('commit')
           puts 'Done.'
