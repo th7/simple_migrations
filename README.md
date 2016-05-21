@@ -1,12 +1,12 @@
-# Migrations
+# Simple Migrations
 
 Rake tasks for basic migration management
 
 ## Usage
 
-Here's an example using Postgres, but any SQL database should be fine.
+Here's an example using Postgres, but any SQL database should be fine. Add the following to your Rakefile:
 ```
-require 'migrations'
+require 'simple_migrations'
 require 'pg'
 
 namespace :migrate do
@@ -17,8 +17,8 @@ namespace :migrate do
     # Using Postgres here, but any DB should be fine
     conn = PG::Connection.new(conf)
 
-    # set up a block that allows Migrations run SQL
-    Migrations.sql_executor do |sql|
+    # set up a block that allows SimpleMigrations run SQL
+    SimpleMigrations.sql_executor do |sql|
       conn.exec(sql)
     end
   end
