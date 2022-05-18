@@ -1,7 +1,4 @@
-require 'spec_helper'
+require 'simple_migrations'
 
 describe SimpleMigrations do
-  it 'has a version number' do
-    expect(SimpleMigrations::VERSION).not_to be nil
-  end
 end

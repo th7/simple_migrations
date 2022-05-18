@@ -1,7 +1,5 @@
 require 'fileutils'
 
-require 'simple_migrations/version'
-
 module SimpleMigrations
   class << self
     def sql_executor(&block)
